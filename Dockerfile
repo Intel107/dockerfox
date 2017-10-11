@@ -7,7 +7,7 @@ RUN apt-get -y update \
 && apt-get install -y x11vnc xvfb firefox \
 && apt-get clean \
 RUN mkdir /.vnc
-RUN x11vnc -storepasswd 0000 ~/.vnc/passwd
+RUN x11vnc  -storepasswd 0000 ~/.vnc/passwd
 
 WORKDIR /root
 
