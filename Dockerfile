@@ -4,8 +4,10 @@ MAINTAINER rnold182
 
 RUN apt-get -y update \
 && apt-get -y upgrade \
-&& apt-get -y install firefox \
+&& apt-get install -y x11vnc xvfb firefox \
 && apt-get clean \
+RUN mkdir /.vnc
+RUN x11vnc -storepasswd 0000 ~/.vnc/passwd
 
 WORKDIR /root
 
