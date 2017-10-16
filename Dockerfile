@@ -1,10 +1,19 @@
-FROM ubuntu:16.04
+# by: rnold182
+#
+# Firefox x-11 továbbítással 
+#
+#
 
-MAINTAINER rnold182
+FROM ubuntu:17.04
 
-RUN apt-get -y update \
-&& apt-get -y upgrade \
-&& apt-get install -y firefox \
-&& apt-get clean \
+RUN   apt-get update && \ 
+      apt-get install -y firefox && \ 
+      apt-get clean
+
+RUN useradd rnold -m -b /home -G sudo
+
+USER rnold
+
+ENV HOME /home/rnold
 
 CMD /usr/bin/firefox
