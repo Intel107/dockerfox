@@ -7,6 +7,4 @@ RUN apt-get -y update \
 && apt-get install -y firefox \
 && apt-get clean \
 
-ENV HOME /home/ffox
-
 CMD /usr/bin/firefox
